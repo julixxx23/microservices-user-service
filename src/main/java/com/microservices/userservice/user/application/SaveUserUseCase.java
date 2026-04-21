@@ -19,13 +19,13 @@ public class SaveUserUseCase implements SaveUserPort {
         }
 
         Users userHash = Users.builder()
-                .idUsers(users.getIdUsers())
-                .lastName(users.getLastName())
+                .idUser(users.getIdUser())
+                .fullName(users.getFullName())
                 .address(users.getAddress())
                 .age(users.getAge())
                 .phoneNumber(users.getPhoneNumber())
                 .role(users.getRole())
-                .is_Active(true)
+                .isActive(true)
                 .username(users.getUsername())
                 .password(passwordEncoder.encode(users.getPassword()))
                 .build();
