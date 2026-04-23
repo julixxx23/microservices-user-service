@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/aí/v1/order")
+@RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 public class UserController{
 
