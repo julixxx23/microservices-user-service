@@ -28,11 +28,11 @@ public class DeleteUserUseCaseTest {
     @DisplayName("Shoudl exit delete")
     void  deleteExit(){
 
-        Users users = UserFixture.aUserWithoutId();
+        Users users  = UserFixture.aUserWithoutId();
 
         when(userRepositoryPort.findById(1L)).thenReturn(Optional.of(users));
-        deleteUserUseCase.delete(1L);
 
+        deleteUserUseCase.delete(1L);
         verify(userRepositoryPort, times(1)).delete(1L);
     }
 
@@ -44,7 +44,6 @@ public class DeleteUserUseCaseTest {
 
         assertThrows(
                 UserNotFoundException.class, () -> deleteUserUseCase.delete(1L));
-
         verify(userRepositoryPort, never()).delete(any());
 
     }

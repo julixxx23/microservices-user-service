@@ -36,6 +36,21 @@ public class UserFixture {
                 .build();
     }
 
+    public static Users aUserInactive(){
+        return Users.builder()
+                .idUser(1L)
+                .username("juanitaOdon")
+                .password("kfje0rrer")
+                .fullName("Juana Cristina Baltazar")
+                .age(23)
+                .phoneNumber("39303344")
+                .address("San Nicolas Zone 4 Mixco")
+                .role(RolesUsers.ADMIN)
+                .isActive(false)
+                .build();
+
+    }
+
     public static List<Users> aUserList() {
         return List.of(aValidUser(), Users.builder()
                 .idUser(1L)

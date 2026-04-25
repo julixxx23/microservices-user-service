@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/user")
+@RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController{
 
@@ -63,12 +63,6 @@ public class UserController{
         );
 
         return ResponseEntity.ok(pageDomain);
-    }
-
-    @PostMapping
-    public ResponseEntity<UserResponse> save(@Valid @RequestBody UserCreateRequest request){
-        Users users = saveUserPort.save(mapper.toDomain(request));
-        return ResponseEntity.status(HttpStatus.CREATED).body(mapper.toResponse(users));
     }
 
     @PutMapping("/{id}")
