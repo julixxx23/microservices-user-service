@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class FindUserByTextUseCase implements FindUsersByTextPort {
 
-    private UserRepositoryPort userRepositoryPort;
+    private final UserRepositoryPort userRepositoryPort;
 
     @Override
     public PageDomain<Users> findByText(String text, int page, int size){
